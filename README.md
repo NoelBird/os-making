@@ -1,10 +1,11 @@
 # os-making
 
-![image-20210425111058151](img/README/image-20210425111058151.png)
+![image-20210508235345557](file://C:\Users\noelbird\Desktop\noelbird.github.io\docs\os-making\img\03\image-20210508235345557.png?lastModify=1620534659)
 
 
 
 - making history
+  - 2021-05-08: entered protected mode
   - 2021-04-25: bootstrap
   - 2021-04-24: environment setting
 
