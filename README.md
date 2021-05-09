@@ -1,6 +1,6 @@
 # os-making
 
-![image-20210508235345557](file://C:\Users\noelbird\Desktop\noelbird.github.io\docs\os-making\img\03\image-20210508235345557.png?lastModify=1620534659)
+![image-20210508235345557](img/README/image-20210508235345557.png)
 
 
 
