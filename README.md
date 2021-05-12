@@ -2,9 +2,12 @@
 
 ![image-20210508235345557](img/README/image-20210508235345557.png)
 
+![image-20210508235345557](img/README/IDT.gif)
+
 
 
 - making history
+  - 2021-05-13: IDT added
   - 2021-05-08: entered protected mode
   - 2021-04-25: bootstrap
   - 2021-04-24: environment setting
