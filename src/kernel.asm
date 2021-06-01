@@ -32,10 +32,16 @@ loop_idt:
     dec ax
     jnz loop_idt
 
+    mov edi, 8*0x20
+    lea esi, [idt_timer]
+    mov cx, 8
+    rep movsb
+
     lidt [idtr]
+    mov al, 0xFE        ; 막아두었던 인터럽트 중
+    out 0x21, al        ; 타이머만 다시 유효하게 합니다.
     sti
 
-    int 0x77
     jmp $
 
 ;*****************************
@@ -72,6 +78,10 @@ msgPMode db "We are in Protected Mode", 0
 msg_isr_ignore db "This is an ignorable inturrupt", 0
 msg_isr_32_timer db "This is the timer inturrupt", 0
 
+idtr:
+    dw 256*8 - 1        ; IDT의 Limit
+    dd 0                ; IDT의 Base Address
+
 ;*********************************
 ;*** Interrupt Service Routines **
 ;*********************************
@@ -82,6 +92,9 @@ isr_ignore:
     push ds
     pushad
     pushfd
+
+    mov al, 0x20
+    out 0x20, al
 
     mov ax, VideoSelector
     mov es, ax
@@ -96,16 +109,49 @@ isr_ignore:
     pop fs
     pop gs
 
+    iret
+
+isr_32_timer:
+    push gs
+    push fs
+    push es
+    push ds
+    pushad
+    pushfd
+
+    mov al, 0x20
+    out 0x20, al
+
+    mov ax, VideoSelector
+    mov es, ax
+    mov edi, (80*2*2)
+    lea esi, [msg_isr_32_timer]
+    call printf
+    inc byte [msg_isr_32_timer]
+
+    popfd
+    popad
+    pop ds
+    pop es
+    pop fs
+    pop gs
+
+    iret
+
 ;*********************************
 ;************* IDT ***************
 ;*********************************
-idtr:
-    dw 256*8 - 1        ; IDT의 Limit
-    dd 0                ; IDT의 Base Address
 
 idt_ignore:
     dw isr_ignore
     dw SysCodeSelector
+    db 0
+    db 0x8E
+    dw 0x0001
+
+idt_timer:
+    dw isr_32_timer
+    dw 0x08
     db 0
     db 0x8E
     dw 0x0001
