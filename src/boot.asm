@@ -32,7 +32,7 @@ read:
     mov bx, 0
 
     mov ah, 2               ; 디스크에 있는 데이터를 es:bx 주소로
-    mov al, 1               ; 1섹터를 읽을 것이라고 알림
+    mov al, 2               ; 2섹터를 읽을 것이라고 알림
     mov ch, 0               ; 0번째 실린더
     mov cl, 2               ; 2번째 섹터부터 읽기 시작합니다.
     mov dh, 0               ; Head=0
