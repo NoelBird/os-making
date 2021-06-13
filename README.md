@@ -1,12 +1,9 @@
 # os-making
 
-![image-20210508235345557](img/README/image-20210508235345557.png)
-
-![image-20210508235345557](img/README/IDT.gif)
-
-
+![keyboard_interrupt](img/README/keyboard_interrupt.gif)
 
 - making history
+  - 2021-06-13: interrupt/exception enabled
   - 2021-06-03: PIC setting completed
   - 2021-05-13: IDT added
   - 2021-05-08: entered protected mode
