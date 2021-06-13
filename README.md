@@ -7,6 +7,7 @@
 
 
 - making history
+  - 2021-06-03: PIC setting completed
   - 2021-05-13: IDT added
   - 2021-05-08: entered protected mode
   - 2021-04-25: bootstrap
