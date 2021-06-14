@@ -1,8 +1,9 @@
 # os-making
 
-![keyboard_interrupt](img/README/keyboard_interrupt.gif)
+![image-20210614222349669](img/README/image-20210614222349669.png)
 
 - making history
+  - 2021-06-14: task switching
   - 2021-06-13: interrupt/exception enabled
   - 2021-06-03: PIC setting completed
   - 2021-05-13: IDT added
