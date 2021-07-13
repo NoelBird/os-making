@@ -2,6 +2,8 @@
 
 ![image-20210614222349669](img/README/image-20210614222349669.png)
 
+currently applying kernel protection
+
 - making history
   - 2021-06-14: task switching
   - 2021-06-13: interrupt/exception enabled
