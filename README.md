@@ -25,6 +25,7 @@ currently applying kernel protection
 
 ## references
 
+- lk little kernel
 - books
   - 김범준. 2005. 만들면서 배우는 OS 커널의 구조와 원리, 한빛미디어
 - sites
